@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sovereign Voice — Spanish through Atmosphere</title>
+    <!-- Fuentes elegantes y de corte editorial de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Azeret+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* -----------------------------------------
+           DISEÑO DE MARCA: EDITORIAL EN NEGRO, BLANCO Y ORO CHAMPAGNE
+           ----------------------------------------- */
+        :root {
+            --bg-dark: #070707;          /* Negro absoluto de fondo */
+            --bg-card: #111111;          /* Negro suave para tarjetas y bloques */
+            --text-light: #f7f5f0;       /* Crema marfil para lectura descansada */
+            --text-muted: #9c9a96;       /* Gris cálido atenuado para descripciones */
+            --gold-primary: #dfba6b;     /* Oro champagne de acento premium */
+            --gold-dark: #8c713b;        /* Oro envejecido para bordes y sutilezas */
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-display: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'Azeret Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.4s ease, opacity 0.4s ease, filter 0.5s ease;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Enlaces tipográficos generales */
+        a {
+            color: var(--gold-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: var(--text-light);
+        }
+
+        /* Enlaces específicos y destacados en el texto */
+        .bio-link {
+            color: var(--gold-primary);
+            border-bottom: 1px dashed var(--gold-primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .bio-link:hover {
+            color: var(--text-light);
+            border-bottom-style: solid;
+            background-color: rgba(223, 186, 107, 0.08);
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* Cabecera Principal (Estilo Editorial) */
+        header {
+            text-align: center;
+            padding: 80px 0 60px 0;
+            border-bottom: 1px solid rgba(223, 186, 107, 0.15);
+        }
+
+        .subtitle-mono {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold-primary);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 54px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        h1 i {
+            font-style: italic;
+        }
+
+        .narrative-intro {
+            font-family: var(--font-serif);
+            font-size: 21px;
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        /* -----------------------------------------
+           EL MANIFIESTO NARRATIVO
+           ----------------------------------------- */
+        .manifesto-section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(223, 186, 107, 0.15);
+        }
+
+        .manifesto-text {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .manifesto-text p {
+            margin-bottom: 25px;
+        }
+
+        /* -----------------------------------------
+           EL TABLERO DE 4 SEMANAS (SYLLABUS OF LEARNING)
+           ----------------------------------------- */
+        .dashboard-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--gold-primary);
+        }
+
+        .section-subtitle {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+
+        /* Grid de 4 semanas simétrico */
+        .weeks-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .weeks-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .week-card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(223, 186, 107, 0.15);
+            padding: 35px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .week-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold-primary);
+        }
+
+        .week-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed rgba(223, 186, 107, 0.2);
+            padding-bottom: 12px;
+        }
+
+        .week-num {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--gold-primary);
+            letter-spacing: 2px;
+        }
+
+        .week-title {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .week-description {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        /* Botones dorados elegantes */
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            color: var(--gold-primary);
+            border: 1px solid var(--gold-primary);
+            padding: 12px 24px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-primary);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px rgba(223, 186, 107, 0.25);
+        }
+
+        .btn-gold i {
+            margin-left: 10px;
+            font-size: 10px;
+        }
+
+        /* -----------------------------------------
+           VISTAS DINÁMICAS (LANDING VS CONSOLA)
+           ----------------------------------------- */
+        .view-section {
+            display: none;
+        }
+
+        .view-section.active {
+            display: block;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* -----------------------------------------
+           CONSOLA DE AUDICIÓN INTERACTIVA (100% LIBRE)
+           ----------------------------------------- */
+        .back-nav {
+            margin-bottom: 30px;
+        }
+
+        .btn-back {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .btn-back i {
+            margin-right: 8px;
+        }
+
+        .btn-back:hover {
+            color: var(--gold-primary);
+        }
+
+        /* Caja de la Consola */
+        .reading-console {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(223, 186, 107, 0.2);
+            border-radius: 6px;
+            padding: 40px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        /* Barra de herramientas */
+        .console-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(223, 186, 107, 0.15);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .toolbar-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .toolbar-btn {
+            background: transparent;
+            border: 1px solid rgba(223, 186, 107, 0.3);
+            color: var(--text-muted);
+            padding: 8px 14px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .toolbar-btn:hover, .toolbar-btn.active {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+        }
+
+        /* Reproductor de Audio */
+        .audio-container {
+            margin-bottom: 35px;
+            background: rgba(223, 186, 107, 0.03);
+            border: 1px dashed rgba(223, 186, 107, 0.25);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .audio-meta {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--gold-primary);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        audio {
+            width: 100%;
+            outline: none;
+        }
+
+        audio::-webkit-media-controls-enclosure {
+            background-color: #121212;
+            border-radius: 4px;
+            border: 1px solid rgba(223, 186, 107, 0.15);
+        }
+
+        /* El Texto Literario de Lectura */
+        .literary-text-box {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+        .literary-text-box p {
+            margin-bottom: 25px;
+            text-indent: 20px;
+        }
+
+        /* Vocabulario resaltado de forma sutil */
+        .vocab-glow {
+            border-bottom: 1px dashed var(--gold-primary);
+            color: var(--gold-primary);
+            cursor: pointer;
+            font-weight: 500;
+            display: inline;
+            position: relative;
+        }
+
+        .vocab-glow:hover {
+            color: var(--text-light);
+            border-bottom-style: solid;
+            background-color: rgba(223, 186, 107, 0.08);
+        }
+
+        /* -----------------------------------------
+           EL DICCIONARIO INTEGRADO AL PIE
+           ----------------------------------------- */
+        .integrated-dictionary {
+            margin-top: 60px;
+            border-top: 1px solid rgba(223, 186, 107, 0.15);
+            padding-top: 40px;
+        }
+
+        .dictionary-title {
+            font-family: var(--font-display);
+            font-size: 24px;
+            color: var(--gold-primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dictionary-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .dict-card {
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(223, 186, 107, 0.1);
+            padding: 20px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .dict-card.highlighted-card {
+            border-color: var(--gold-primary);
+            background-color: rgba(223, 186, 107, 0.03);
+            box-shadow: 0 0 15px rgba(223, 186, 107, 0.05);
+        }
+
+        .dict-word {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .word-sp {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--gold-primary);
+        }
+
+        .word-en {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .word-definition {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* -----------------------------------------
+           SECCIÓN DE ADQUISICIÓN / REDIRECCIÓN DIRECTA A PATREON
+           ----------------------------------------- */
+        .patreon-upsell-box {
+            margin-top: 50px;
+            border: 1px solid var(--gold-dark);
+            background: linear-gradient(135deg, rgba(223, 186, 107, 0.04) 0%, rgba(0, 0, 0, 0.5) 100%);
+            border-radius: 6px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .upsell-title {
+            font-family: var(--font-display);
+            font-size: 26px;
+            color: var(--gold-primary);
+            margin-bottom: 12px;
+        }
+
+        .upsell-description {
+            font-family: var(--font-serif);
+            font-size: 19px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.5;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-patreon-direct {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--gold-primary);
+            color: var(--bg-dark);
+            border: 1px solid var(--gold-primary);
+            padding: 14px 28px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-patreon-direct:hover {
+            background-color: transparent;
+            color: var(--gold-primary);
+            box-shadow: 0 0 20px rgba(223, 186, 107, 0.2);
+        }
+
+        .patreon-sec-text {
+            font-family: var(--font-mono);
+            font-size: 9px;
+            color: var(--text-muted);
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* -----------------------------------------
+           MODO ENFOQUE (FOCUS MODE)
+           ----------------------------------------- */
+        body.focus-active {
+            background-color: #030303;
+        }
+
+        body.focus-active header,
+        body.focus-active .back-nav,
+        body.focus-active .integrated-dictionary,
+        body.focus-active .about-section,
+        body.focus-active .gratitude-section,
+        body.focus-active footer,
+        body.focus-active #view-landing {
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        body.focus-active .reading-console {
+            background-color: transparent;
+            border-color: transparent;
+            margin-top: 50px;
+        }
+
+        body.focus-active .console-toolbar {
+            opacity: 0.3;
+        }
+
+        body.focus-active .console-toolbar:hover {
+            opacity: 1;
+        }
+
+        /* -----------------------------------------
+           NUEVA SECCIÓN DE BIOGRAFÍA CON ENLACES (TRUST & CONTACT)
+           ----------------------------------------- */
+        .about-section {
+            border-top: 1px solid rgba(223, 186, 107, 0.15);
+            padding: 80px 0 60px 0;
+            margin-top: 60px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .about-grid {
+                grid-template-columns: 240px 1fr;
+            }
+        }
+
+        .about-avatar-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 2px solid var(--gold-primary);
+            padding: 6px;
+            background-color: var(--bg-dark);
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+
+        .about-avatar:hover {
+            filter: grayscale(0%);
+        }
+
+        .about-content {
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .about-content {
+                text-align: left;
+            }
+        }
+
+        .about-title {
+            font-family: var(--font-display);
+            font-size: 28px;
+            color: var(--gold-primary);
+            margin-bottom: 5px;
+        }
+
+        .about-subtitle {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .about-bio {
+            font-family: var(--font-serif);
+            font-size: 19px;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* Redes sociales profesionales de validación social */
+        .about-socials {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .about-socials {
+                justify-content: flex-start;
+            }
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            border: 1px solid rgba(223, 186, 107, 0.25);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            color: var(--gold-primary);
+            border-color: var(--gold-primary);
+            background-color: rgba(223, 186, 107, 0.05);
+            box-shadow: 0 0 10px rgba(223, 186, 107, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* -----------------------------------------
+           SECCIÓN DE GRATITUD / DONATIVO AL PIE
+           ----------------------------------------- */
+        .gratitude-section {
+            border-top: 1px dashed rgba(223, 186, 107, 0.15);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .gratitude-text {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            color: var(--text-light);
+            font-style: italic;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+
+        .gratitude-text span {
+            color: var(--gold-primary);
+            font-weight: 600;
+        }
+
+        /* Botón de Buy Me a Coffee elegante */
+        .btn-bmc {
+            background-color: var(--text-light);
+            color: var(--bg-dark);
+            border: 1px solid var(--text-light);
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 28px;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 13px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-bmc:hover {
+            background-color: transparent;
+            color: var(--text-light);
+            border-color: var(--text-light);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-bmc i {
+            margin-right: 10px;
+            color: #d4af37;
+            font-size: 16px;
+        }
+
+        /* -----------------------------------------
+           PIE DE PÁGINA
+           ----------------------------------------- */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(223, 186, 107, 0.05);
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+        }
+
+        /* Destello para el glosario */
+        @keyframes pulseHighlight {
+            0% { background-color: rgba(223, 186, 107, 0.4); }
+            100% { background-color: transparent; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- RECUADRO DE VISTA: TABLERO DE INICIO -->
+        <div id="view-landing" class="view-section active">
+            <header>
+                <p class="subtitle-mono">A class in Rhythm and Resonance</p>
+                <h1>Spanish <i>Without</i> Shame</h1>
+                <p class="narrative-intro">Spanish through literature, atmosphere, and emotional memory.</p>
+            </header>
+
+            <!-- El Manifiesto del Curso -->
+            <section class="manifesto-section">
+                <div class="manifesto-text">
+                    <p>Spanish Without Shame was created from a simple idea: language is not only studied. Language is inhabited.</p>
+                    <p>This course combines simultaneous listening and reading practices designed to help learners experience Spanish through rhythm, atmosphere, memory, and sound. Each session invites you to listen to my voice while following the text visually in real time. Research in language acquisition and reading-while-listening practices suggests that combining auditory and visual input strengthens comprehension, vocabulary retention, pronunciation awareness, and emotional connection with language.</p>
+                    <p>But beyond theory, this project was born from something more human: the feeling of hearing Spanish alive.</p>
+                    <p>The recordings are accompanied by soft ambient textures — distant city sounds, subtle musical landscapes atmosphere and urban memory — creating an immersive space where Spanish becomes more than information. It becomes presence.</p>
+                    <p style="border-top: 1px dashed rgba(223, 186, 107, 0.2); padding-top: 25px; font-style: italic; color: var(--gold-primary);">
+                        Below, you can access the opening practice of each of the 4 syllabus weeks completely free. If you wish to unlock the full extended weekly archive, join our community on Patreon.
+                    </p>
+                </div>
+            </section>
+
+            <!-- El Tablero de las 4 Semanas (Syllabus of Learning) -->
+            <section class="dashboard-section">
+                <h2 class="section-title">Syllabus of Learning</h2>
+                <p class="section-subtitle">Selecciona una semana para iniciar la audición literaria gratuita</p>
+
+                <div class="weeks-grid">
+                    
+                    <!-- SEMANA 1 -->
+                    <div class="week-card">
+                        <div class="week-header">
+                            <span class="week-num">Week 1</span>
+                            <span class="week-title">Juan Villoro I</span>
+                        </div>
+                        <p class="week-description">"Los Culpables" Part I. Descubre la cadencia, el humor sutil y la tensión conversacional en la escritura de Juan Villoro.</p>
+                        <button class="btn-gold" onclick="openWeek('week1')">Listen Free <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- SEMANA 2 -->
+                    <div class="week-card">
+                        <div class="week-header">
+                            <span class="week-num">Week 2</span>
+                            <span class="week-title"> Juan Villoro II</span>
+                        </div>
+                        <p class="week-description">"Los Culpables" Part IV. Continuamos el viaje auditivo desmenuzando los detalles más profundos e íntimos del cuanto de Villoro.</p>
+                        <button class="btn-gold" onclick="openWeek('week2')">Listen Free <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- SEMANA 3 -->
+                    <div class="week-card">
+                        <div class="week-header">
+                            <span class="week-num">Week 3</span>
+                            <span class="week-title">Mendoza & Herrera</span>
+                        </div>
+                        <p class="week-description">"Furia" / Selections. Adéntrate en la atmósfera poética del desierto de Clyo Mendoza y los paisajes biculturales de Yuri Herrera.</p>
+                        <button class="btn-gold" onclick="openWeek('week3')">Listen Free <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- SEMANA 4 -->
+                    <div class="week-card">
+                        <div class="week-header">
+                            <span class="week-num">Week 4</span>
+                            <span class="week-title">Ojeda & Melchor</span>
+                        </div>
+                        <p class="week-description">"Las Voladoras" / Selections. Explora el lirismo del gótico andino de Mónica Ojeda y el realismo tenso veracruzano de Fernanda Melchor.</p>
+                        <button class="btn-gold" onclick="openWeek('week4')">Listen Free <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- RECUADRO DE VISTA: CONSOLA DE AUDICIÓN MODULAR (100% GRATUITA) -->
+        <div id="view-console" class="view-section">
+            <div class="back-nav">
+                <button class="btn-back" onclick="closeWeek()">
+                    <i class="fa-solid fa-arrow-left-long"></i> Volver al Tablero
+                </button>
+            </div>
+
+            <!-- Estación de Consola -->
+            <div class="reading-console" id="consoleBox">
+                
+                <!-- Barra superior de utilidades -->
+                <div class="console-toolbar">
+                    <span id="session-meta-tag" class="subtitle-mono" style="margin: 0;">Semana 1 // Empieza la experiencia</span>
+                    <div class="toolbar-group">
+                        <button class="toolbar-btn" onclick="toggleFocusMode()" id="focusBtn">
+                            <i class="fa-solid fa-eye-slash"></i> Focus Mode
+                        </button>
+                        <button class="toolbar-btn" onclick="adjustFont(-2)">A-</button>
+                        <button class="toolbar-btn" onclick="adjustFont(2)">A+</button>
+                    </div>
+                </div>
+
+                <!-- Reproductor de Audio -->
+                <div class="audio-container" id="consoleAudioContainer">
+                    <div class="audio-meta">
+                        <span>AUDIO STREAMING // FREE</span>
+                        <span id="audio-file-name">archivo_de_audio.mp3</span>
+                    </div>
+                    <audio id="lessonAudio" controls controlsList="nodownload"></audio>
+                </div>
+
+                <!-- ÁREA DE LECTURA Y DICCIONARIO -->
+                <div>
+                    <h2 id="session-title" class="section-title" style="text-align: left; margin-bottom: 25px; font-size: 38px;">Título de Lección</h2>
+                    
+                    <!-- Contenedor del Texto Literario -->
+                    <div class="literary-text-box" id="literaryText">
+                        <!-- Inyectado por JS -->
+                    </div>
+
+                    <!-- El Diccionario Integrado de Soporte -->
+                    <div class="integrated-dictionary">
+                        <h3 class="dictionary-title">
+                            <i class="fa-solid fa-book-open"></i> Session Glossary
+                        </h3>
+                        <div class="dictionary-grid" id="dictionaryContainer">
+                            <!-- Inyectado por JS -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- EMBUDO DE CONVERSIÓN A PATREON SOBERANO AL PIE DE LA CONSOLA -->
+            <div class="patreon-upsell-box">
+                <h3 class="upsell-title">Unlock the Complete Week</h3>
+                <p class="upsell-description">
+                    Únete a nuestra comunidad en Patreon para desbloquear las prácticas de profundización restantes, el glosario interactivo extendido de cada semana, material de video exclusivo y masterclasses completas.
+                </p>
+                <button class="btn-patreon-direct" onclick="window.open('https://www.patreon.com/cw/SpanishWithoutShame', '_blank')">
+                    Unlock Full Course on Patreon <i class="fa-brands fa-patreon" style="margin-left: 10px;"></i>
+                </button>
+                <p class="patreon-sec-text">Spanish Without Shame Community Member Access</p>
+            </div>
+        </div>
+
+        <!-- SECCIÓN BIOGRÁFICA (CON ENLACES VERIFICABLES Y COMPORTAMIENTO DE ALTA CONFIANZA) -->
+        <section class="about-section">
+            <div class="about-grid">
+                <div class="about-avatar-container">
+                    <!-- Espacio para el retrato del creador. He configurado un fallback elegante -->
+                    <img class="about-avatar" src="https://github.com/xochipilli-shuffle/spanishwithoutshame/blob/main/2B18C0A7-BE4F-4DE6-8649-E5BCEFED23E4.jpeg?raw=true" alt="Author's Portrait" onerror="this.src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/svgs/solid/user-tie.svg'">
+                </div>
+                <div class="about-content">
+                    <h3 class="about-title">Behind the Voice</h3>
+                    <span class="about-subtitle">Founder & Voice Coach</span>
+                    <p class="about-bio">
+                        Hola. Soy el creador de Spanish Without Shame. Tras años de trabajar con comunidades bilingües y estudiantes de herencia mexicana en Estados Unidos, diseñé este espacio de aprendizaje para practicar y sentir el Español como una lengua viva. Mi objetivo es ayudarte a sentir respirar y escuchar el español como una lengua viva rítmica y profundamente de nuestra comunidad. 
+                        Mi B.A en Filosofía y mi M.A. en Latin American Cultures por NEIU no son solo títulos académicos sino que han sido fruto del contacto directo con la cultura las artes el cine la música y el lenguaje de nuestras comunidades en Chicago. Actualmente soy director de la plataforma cultural <a href="https://xochipilliculture.wordpress.com/consejo-editorial/" target="_blank" class="bio-link">Xochipilli Culture</a>, y dialogo con artistas en nuestro <a href="https://open.spotify.com/show/4ZWuTZtZSyB6iEfZ8fYFbq" target="_blank" class="bio-link">Podcast de Inmersión</a> y espacios de <a href="https://lumpenradio.com/author/pedro-pablo-marin" target="_blank" class="bio-link">radio comunitaria</a>. Si tienes alguna duda sobre las prácticas o deseas colaborar con talleres de inmersión literaria presenciales, escríbeme directamente.
+                    </p>
+                    <!-- Redes sociales profesionales de validación social -->
+                    <div class="about-socials">
+                        <a href="https://www.linkedin.com/in/pedro-pablo-marin/" class="social-link" target="_blank" title="LinkedIn Profesional"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/_xochipilliculture/" class="social-link" target="_blank" title="Instagram de validación"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="mailto:ppmarin@neiu.edu" class="social-link" title="Contacto directo"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE GRATITUD / DONACIÓN SOBERANA AL PIE DE PÁGINA -->
+        <section class="gratitude-section">
+            <div class="gratitude-text">
+                "Este espacio es y seguirá siendo libre gracias a la gratitud de nuestra comunidad. Si este viaje sonoro ha enriquecido tu experiencia con el español, te invitamos a <span>dejar un gesto de apoyo</span>. Tu generosidad mantiene este aprendizaje al alcance de todos."
+            </div>
+            <!-- Botón de Buy Me a Coffee -->
+            <button class="btn-bmc" onclick="window.open('https://buymeacoffee.com/xochipilliculture', '_blank')">
+                <i class="fa-solid fa-mug-hot"></i> Buy Me a Coffee
+            </button>
+        </section>
+
+        <!-- PIE DE PÁGINA -->
+        <footer>
+            <p>© 2026 SPANISH WITHOUT SHAME. ALL RIGHTS RESERVED.</p>
+            <p style="margin-top: 10px; font-size: 9px; opacity: 0.6;">SPANISH THROUGH LITERATURE, AUDITION, AND ATMOSPHERE.</p>
+        </footer>
+
+    </div>
+
+    <!-- PROGRAMACIÓN DE DATOS, CARGAS Y EVENTOS (VANILLA JS) -->
+    <script>
+        // --- BASE DE DATOS DE LAS 4 PRÁCTICAS GRATUITAS ---
+        const weeksData = {
+            'week1': {
+                name: "Week 1",
+                author: "Juan Villoro",
+                title: "Los Culpables I",
+                audioSrc: "https://github.com/xochipilli-shuffle/spanishwithoutshame/raw/refs/heads/main/1LosCulpablesdeJuanVilloro.mp3", // Pon aquí tu audio de Internet Archive
+                audioName: "juan_villoro_los_culpables_s1_p1.mp3",
+                text: `<p>Las tijeras estaban sobre la mesa. Tenían un tamaño desmedido. Mi padre las había usado para rebanar pollos.
+Desde que él murió, Jorge las lleva a todas partes. Tal vez sea normal que un psicópata duerma con su pistola bajo la almohada. Mi hermano no es un psicópata. Tampoco es normal. Lo encontré en la habitación, encorvado, luchando para sacarse la camiseta. Estábamos a 42 grados. Jorge llevaba una camiseta de tejido burdo, ideal para adherirse como una segunda piel.-¡Abrela! -gritó con la cabeza envuelta por la tela. Su mano señaló un punto inexacto que no me costó trabajo adivinar. Fui por las tijeras y corté la camiseta. Vi el tatuaje en su espalda. Me molestó que las tijeras sirvieran de algo; Jorge volvía útiles las cosas sin sentido; para él, eso significaba tener talento. Me abrazó como si untarme su sudor fuera un bautizo. Luego me vio con sus ojos hundidos por la droga, el sufrimiento, demasiados videos. Le sobraba energía, algo inconveniente para una tarde de verano en las afueras de Sacramento. En su visita anterior, Jorge pateó el ventilador y le rompió un aspa; ahora, el aparato apenas arrojaba aire y hacía un ruido de sonaja. Ninguno de los seis hermanos pensó en cambiarlo. La granja estaba en venta. Aún olía a aves; las alambradas conservaban plumas blancas.</p>
+                       <p>Yo había propuesto otro lugar para reunirnos pero él necesitaba algo que llamó "correspondencias". Ahí vivimos apiñados, leímos la Biblia a la hora de comer, subimos al techo a ver lluvias de estrellas, fuimos azotados con el rastrillo que servía para barrer el excremento de los pollos, soñamos en huir y regresar para incendiar la casa. -Acompáñame -Jorge salió al porche. Había llegado en una camioneta Windstar, muy lujosa para él. Sacó dos maletines de la camioneta. Estaba tan flaco que parecía sostener tanques de buceo en la absurda inmensidad del desierto. Eran máquinas de escribir. Las colocó en las cabeceras del comedor y me asignó la que se atascaba en la eñe. Durante semanas íbamos a estar frente a frente. Jorge se creía guionista. Tenía un contacto en Tucson, que no es precisamente la meca del cine, interesado en una "historia en bruto" que en apariencia nosotros podíamos contar. La prueba de su interés eran la camioneta Windstar y dos mil dólares de anticipo. Confiaba en el cine mexicano como en un intangible guacamole; había demasiado odio y demasiada pasión en la región para no aprovecharlos en la pantalla. En Arizona, los granjeros disparaban a los migrantes extraviados en sus territorios ("un safari caliente", había dicho el hombre al que Jorge citaba como a un evangelista); luego, el improbable productor había preparado un coctel margarita color rojo. Lo "mexicano" se imponía entre un reguero de cadáveres.</p>`,
+                vocab: [
+                    { word: "burdo", en: "coarse / crude / rough", def: "Rudo, tosco o carente de delicadeza en sus formas o constitución." },
+                    { word: "reguero", en: "trail / mess / scatter", def: "Línea o rastro de cosas esparcidas sin orden ni concierto en un lugar." },
+                    { word: "cabeceras", en: "headwaters / regional capitals", def: "Ciudades o poblaciones principales que actúan como cabecera o centro de un distrito." },
+                    { word: "untarme", en: "to smear myself / to immerse myself", def: "Involucrarme de manera cercana o contagiarse de una actitud." },
+                    { word: "la meca del cine", en: "Hollywood", def: "Expresión literaria para referirse a la capital de la industria cinematográfica." },
+                    { word: "techo", en: "ceiling / roof", def: "Superficie que cubre y cierra una habitación o edificio por su parte superior." },
+                    { word: "historia en bruto", en: "raw history / unrefined story", def: "Un relato en su estado natural, crudo, sin pulir ni editar decorativamente." }
+                ]
+            },
+            'week2': {
+                name: "Week 2",
+                author: "Juan Villoro",
+                title: "Los Culpables IV",
+                audioSrc: "https://github.com/xochipilli-shuffle/spanishwithoutshame/raw/refs/heads/main/4LosCulpablesdeJuanVilloro.mp3",
+                audioName: "juan_villoro_los_culpables_s2_p1.mp3",
+                text: `<p>Quería llegar a Phoenix al amanecer. Cuando las plantas espinosas rasguñaron el cielo amarillo, me detuve a orinar. No oí ruidos en la parte trasera. Pensé que los otros se habían asfixiado o muerto de sed o hambre, pero no hice nada.Volví al coche.Llegamos a las afueras de Phoenix. Detuve el coche y me persigné. Cuando abrí el cofre trasero, vi los cuerpos quietos y las ropas teñidas de rojo. Luego oí una carcajada. Sólo al ver las camisas salpicadas de semillas recordé que llevaba tres sandías. Los migrantes las habían devorado en forma inaudita, con todo y cáscara. Se despidieron con una felicidad alucinada que me produjo el mismo malestar que la posibilidad de matarlos mientras trataba de salvarlos. Fue esto lo que le conté a Jorge. A los dos días llamó para decirme que teníamos una "historia en bruto". No servía para una película, pero sí para ilusionar a un productor. Mi hermano confiaba en mi conocimiento de los cruces ilegales y en los cursos de redacción por correspondencia que tomé antes de irme de trailero, cuando soñaba en ser corresponsal de guerra sólo porque eso garantizaba ir lejos.
+Durante seis semanas sudamos uno frente al otro. Desde su cabecera, Jorge gritaba: "¡Los productores son pendejos, los directores son pendejos, los actores son pendejos!” Escribíamos para un comando de pendejos. Era nuestra ventaja: sin que se dieran cuenta, los obligaríamos a transmitir una verdad incómoda.</p>
+                       <p>A esto Jorge le decía el silbato de Chaplin". En una película, Chaplin se traga un silbato que sigue sonando en su estómago. Así sería nuestro guión, el silbato que tragarían los pendejos: sonaría dentro de ellos sin que pudieran evitarlo. Pero yo no podía armar la historia, como si todas las palabras llevaran la eñe que se atascaba en mi teclado. Entonces Jorge habló como nuestro padre lo había hecho en esa mesa: nos faltaba sentirnos culpables. Éramos demasiado indiferentes. Teníamos que jodernos para merecer la historia. Fuimos a unas peleas de perros y apostamos los dos mil dólares del anticipo. Escogimos un perro con una cicatriz en equis en el lomo. Parecía tuerto. Luego supimos que la furia le hacía guiñar un ojo. Ganamos seis mil dólares. La suerte nos consentía, pésima noticia para un guionista, según Jorge.
+No sé si él tomó alguna droga o una pastilla, lo cierto es que no dormía. Se quedaba en una mecedora en el porche, viendo los huizaches del desierto y los gallineros abandonados, con las tijeras abiertas sobre el pecho. 
+Al día siguiente, cuando yo revolvía el nescafé, me gritaba con ojos insomnes: "¡Sin culpa no hay historia!" El problema, mi problema, es que yo ya era culpable. Jorge nunca me preguntó qué estaba haciendo en la carretera de terracería a bordo de un Spirit que no era mío, y yo no deseaba mencionarlo.</p>`,
+                vocab: [
+                    { word: "me persigné", en: "I crossed myself", def: "Hacer la señal de la cruz con la mano sobre el cuerpo, normalmente por miedo, fe, nervios o para pedir protección. Muy común en culturas católicas mexicanas." },
+                    { word: "cruces illegales", en: "Illegal border crossings", def: "Entradas no autorizadas de personas a otro país cruzando la frontera sin permiso oficial, especialmente entre México y Estados Unidos." },
+                    { word: "Parecía tuerto", en: "He looked like he was blind in one eye", def: "alguien que no puede ver con un ojo o que tiene un ojo desviado, cerrado o dañado." }
+                ]
+            },
+            'week3': {
+                name: "Week 3",
+                author: "Clyo Mendoza / Yuri Herrera",
+                title: "Furia / Selections",
+                audioSrc: "https://github.com/xochipilli-shuffle/spanishwithoutshame/raw/refs/heads/main/Fragmento%20de%20la%20novela%20Furia%20de%20Clyo%20Mendoza.mp3",
+                audioName: "mendoza_furia_s3_p1.mp3",
+                text: `<p>Soldado Uno y Soldado Dos se encontraron frente a un cadáver en cuyos ojos abiertos no se proyectaba el cielo espeso de la guerra, sino una luz que daba la sensación de la negrura. Soldado Uno y Soldado Dos se habían aproximado al cadáver, uno para reconocer si era un colega muerto, el otro para saber si había atinado su disparo. El cuerpo del niño refulgía la luz que se desprende al morir y su rostro estaba empañado por toda la sangre evaporada. Una costra que había sido inmediata rodeaba el calor de la bala en medio de sus ojos abiertos. Soldado Uno y Soldado Dos, todavía idiotizados por la escena (como si fuera la primera muerte en la que eran cómplices o testigos), se dieron la vuelta para mirarse, mientras los ojos de sus armas, listos para el disparo, también se miraban. Rodeados de amigos y enemigos muertos, Soldado Uno y Soldado Dos no sabían transmitir firmemente la amenaza. Estaban horrorizados. Y el miedo que veía uno, lo veía el otro. Esa mirada a punto de matarse fue la comunión. Sin mediar palabra, Soldado Dos hizo pasar al otro como su rehén para salir del campo de batalla, y una vez estando fuera, en el mirador desde donde le había disparado al niño, conversaron.¿Quiénes eran? Hacía meses que ninguno de los dos recordaba quién era. Las órdenes les habían quitado la voluntad y sin ella ambos se habían convertido en asesinos, asesinos de sí mismos también. La luna menguaba y fue bajo su cuerno de luz cuando Soldado Uno y Soldado Dos se dijeron sus verdaderos nombres (Yo soy Lázaro, Yo Juan) y decidieron que huirían.</p>
+                       <p>Tuvieron que hablarle al cuerpo para que se rindiera. Le dijeron: ya está bien, relaja ese mentón y deja de fruncir el ceño, se ha acabado. Pero el niño estaba todavía en guerra y el rictus en su mano atoraba sus huesos en un puño. Déjanos vestirte de blanco, pequeño, le dijeron, suelta el puño. Tardaron horas en lograr que el cadáver del niño relajara las manos y les mostrara las palmas. En sus quicios, lo que guardaba el puño eran cientos de líneas trazando los caballos que significan la muerte prematura. Tenía las líneas de una mano deshechas por el tacto de su arma y en la otra le crecían cientos de arrugas hechas por empuñar la nada, dejando adivinar que, más temprano que tarde, morir de aquella forma era desde hacía mucho su suerte. Tuvieron que cantarle para que quisiera abrir las manos. Ellos, especialistas en recoger a los hombres caídos, sabían que sólo ante la muerte valía la pena rendirse. Por eso a él, para que se rindiera, le cantaron una canción de cuna. El niño dejó de fruncir el ceño y entonces pudieron sacar la bala. El niño abrió las manos, el niño dejó de apretar los dientes y, cuando al fin relajó el esqueleto, pudieron meterlo en la camisa blanca. Luego se lo llevaron. Uno de los hombres dijo que aquel niño era tan conmovedor que de no haber habido un hueco le habría besado la frente.</p>`,
+                vocab: [
+                    { word: "negrura", en: "Darkness / Blackness", def: "A strong dark or black atmosphere, sometimes with a mysterious or emotional tone" },
+                    { word: "atinado", en: "Accurate", def: "Something said or done correctly, wisely, or with good judgment" },
+                    { word: "La luna menguaba", en: "The moon was waning", def: "The moon was becoming visually smaller each night after the full moon phase." },
+                    { word: "fruncir el ceño", en: "To frown", def: "To pull the eyebrows together to show concern, anger, confusion, or concentration." }
+                ]
+            },
+            'week4': {
+                name: "Week 4",
+                author: "Mónica Ojeda / Fernanda Melchor",
+                title: "Las Voladoras",
+                audioSrc: "https://github.com/xochipilli-shuffle/spanishwithoutshame/raw/refs/heads/main/Cuento%20Las%20Voladoras%20de%20Monica%20Ojeda.mp3",
+                audioName: "ojeda_voladoras_s4_p1.mp3",
+                text: `<p>¿Bajar la voz? ¿Por qué tendría que hacerlo? Si uno murmura es porque teme o porque se avergüenza, pero yo no temo. Yo no me avergüenzo. Son otros los que sienten que tengo que bajar la voz, achicarla, convertirla en un topo que desciende, que avanza hacia abajo cuando lo que quiero es ir hacia arriba, ¿sabe?, como una nube. O un globo. O las voladoras. ¿A usted le gustan los globos? A mí me encantan, sobre todo los que mamá ata a los árboles para espantar a los animales del bosque. A las voladoras no les gustan los globos y siempre los revientan. Hacen ¡bam!, y con eso yo ya sé que son ellas. Mamá les grita mucho: les lanza zapatos, les lanza tenedores. Pero las voladoras son rápidas y lo esquivan todo. Esquivan los cascos de los caballos de papá. Esquivan los balidos de las cabras. Yo he llorado mucho por esto, y si ya no lo hago es porque me dan miedo las abejas que se prenden de mis pestañas. Si quiere que se lo explique bien, míreme. En mi cara está toda la verdad, la que no tiene palabras sino gestos. La que es materia, la que se escucha y se toca. Verá, es cierto que las voladoras no son mujeres normales. Para empezar tienen un solo ojo. No es que les falte uno, sino que solo tienen un ojo, como los cíclopes. Yo soñé con una de ellas antes de que entrara a nuestra casa por la ventana de mi habitación. La vi sentada, rígida, dándole de beber sus lágrimas a las abejas. Pocos saben que las voladoras pueden llorar, y los que saben dicen que las brujas no lloran de emoción, sino de enfermedad. La voladora entró llorando con su único ojo y trajo los zumbidos a la familia. Trajo la montaña donde jadean las que aprendieron a elevarse de una forma horrible, con los brazos abiertos y las axilas chorreando miel. A papá le disgusta su olor a vulva y a sándalo, pero cuando mamá no está le acaricia el lomo y le pregunta cosas muy difíciles de entender y de repetir. En cambio, si mamá está presente, él intenta patearla para que salga de la casa, le escupe, se saca el cinturón y golpea las puertas y las paredes como si fueran a gemir. En secreto, yo dejo las ventanas abiertas por la noche para escuchar el rezo de los árboles. Los oigo y me arrullo con ellos aunque a veces también me da escalofríos el negro fondo de sus oraciones. La voladora tiene el pelo negro, ¿sabe?, como el mío y como el canto de los pájaros del monte. La siento acurrucarse entre mis piernas en las madrugadas y me abrazo a ella porque, como dice papá cuando mamá no lo ve, un cuerpo necesita a otro cuerpo, sobre todo en la oscuridad. He aprendido a amar sus lágrimas. Usted no sabe lo que es amar un pelaje como si fuera un cabello, pero verá: en mis sueños, la voladora tiene un paisaje y una tumba. Tiene montañas y un muerto al que llorar. Yo nunca he sabido por qué llora ni por qué sus lágrimas sirven de alimento para el zumbido divino. ¿Sabe usted que el sonido que hacen las abejas es la vibración de Dios? Mamá le teme a los panales por eso. Y odia a la voladora porque es una mujer que inquieta a los caballos y le da de beber su tristeza a las abejas. «No es nuestra», dice sudando y tocándose el cuello. «No queremos su silencio». Y es que ella mira a mamá con su único ojo sin hablar. Es esa falta de palabra lo que más molesta a los caballos. Las cabras, en cambio, se tranquilizan si la voladora llega seguida por un enjambre y moja la tierra con su llanto. Yo no entiendo por qué mamá la odia y a la vez la observa con las mejillas rojas y calientes. No entiendo por qué a papá se le tensa el pantalón.</p>
+                       <p>La montaña es el verdadero hogar de las voladoras, una casa que siempre nos ha dicho cosas importantes, pero en la mía está prohibido acercarse. Según mis padres es un templo de sonidos terribles, de ruidos de pieles, uñas, picos, colas, cuernos, lenguas, aguijones… Allí se van volando las abuelas, madres e hijas que se extravían, pero lo que más me da miedo es el sonido de las plantas. Esos crujidos verdes que llaman a la voladora y la alejan de mis caderas. Fue mi padre el primero en enseñarme que Dios es tan peligroso y profundo como un bosque. Por eso nuestros animales están domesticados y jamás traspasan las vallas, salvo uno que otro caballo enloquecido por la divinidad. Cuando un caballo enloquece, papá dice que es porque el-Dios-que está-en-todo despierta en el corazón del animal. «Si algo tan grande como Dios abre los ojos tras tus huesos, tú te disuelves como polvo en el agua y dejas de existir», me dijo. Pero la voladora es el bosque entrando a nuestra casa y eso no había pasado nunca. Nunca habíamos sentido el delirio divino tan cerca, ni tampoco su deseo. Porque en el fondo, créame, yo le estoy hablando del deseo de Dios: el misterio más absoluto de la naturaleza. Imagine ese misterio entrando a su casa y ensanchándole las caderas. Imagine a las plantas sudando. Imagine las venas brotadas de los caballos. La voladora hace que papá se manche los pantalones y que mamá cierre muy fuerte las piernas. Hace que yo me unte las axilas con miel y suba al tejado a probar el aire. A pesar de eso la amamos y el amor tiene su propia forma de conocer, ¿entiende? Yo amo su pelaje como si fuera un cabello. Amo su naturaleza. El día en que sangré por primera vez ella desapareció durante una semana. Mamá fingió ponerse contenta, pero en las madrugadas regaba leche en el suelo de la cocina que luego lamía con toda su sed. Se subía al tejado con las axilas como un panal. Volaba unos metros. Caía desnuda sobre la hierba. Papá y yo la veíamos sufrir a escondidas y, a la mañana siguiente, la escuchábamos decir: «Creo que se ha ido para siempre». Pero la voladora regresó y lloró sobre mis pezones con su único ojo y mis pezones, grandes y oscuros como los rezos de los árboles, despertaron. Espero que lo entienda: un ser así trae el futuro. Y después de unos meses yo empecé a hincharme y todos los caballos enloquecieron. Todas las cabras durmieron. Usted tiene que explicarle a la congregación que esto fue lo que sucedió: que a papá le turbaba que yo durmiera con el zumbido de las abejas. Sudaba. Se tocaba debajo de los pantalones. Mamá, en cambio, se cortó el pelo y lo enterró al pie del manzano más viejo del bosque. Tiene que contarles que la voladora llora y revienta los globos y vacía los panales, pero que yo amo su pelaje como a un cabello. ¿Qué se hace cuando una familia siente cosas tan distintas y tan similares a la vez? Yo rezo hacia arriba y el ojo de la bruja se tuerce. Suben las abejas. ¿Sabe usted lo que hace en la sangre el zumbido de los panales? Las lágrimas mojan mi cuerpo por las noches. Todavía duermo con la voladora y, a veces, papá mira igual que un caballo en delirio la línea irregular de la valla que separa nuestra casa del promontorio. Yo no me avergüenzo del tamaño de mis caderas. No bajo la voz. No le tengo miedo al pelaje. Subo al tejado con las axilas húmedas y abro los brazos al viento. El misterio es un rezo que se impone.</p>`,
+                vocab: [
+                    { word: "a papá le turbaba", en: "it deeply unsettled my father", def: "Expresión que denota que el padre sentía incomodidad emocional ante la inmensidad del silencio natural." },
+                    { word: "achicarla", en: "to shrink her / to break her down", def: "Proceso de intimidar, silenciar o hacer sentir pequeña e indefensa a una persona." },
+                    { word: "valla", en: "fence / barrier", def: "Estructura de madera, metal o estacas utilizada para cercar un límite o propiedad." },
+                    { word: "promontorio", en: "promontory / cliff", def: "Eminencia rocosa de gran altura que se eleva sobre el terreno circundante." },
+                    { word: "balidos de las cabras", en: "bleating of the goats", def: "Sonidos agudos característicos emitidos por las cabras." },
+                    { word: "los panales", en: "the honeycombs", def: "Estructuras hexagonales construidas por abejas para depositar la miel." },
+                    { word: "delirio divino", en: "divine delirium / sacred ecstasy", def: "Estado de éxtasis místico o arrebato espiritual que desafía la razón común." }
+                ]
+            }
+        };
+
+        let activeWeekId = null;
+
+        // --- MANEJO DE LA CONSOLA ---
+        function openWeek(weekId) {
+            const week = weeksData[weekId];
+            if (!week) return;
+
+            activeWeekId = weekId;
+
+            // Cargar Metadatos
+            document.getElementById('session-meta-tag').textContent = `${week.name} // Practice Demo`;
+            document.getElementById('session-title').textContent = week.title;
+            document.getElementById('audio-file-name').textContent = week.audioName;
+
+            // Cargar Audio Player
+            const audioElem = document.getElementById('lessonAudio');
+            audioElem.src = week.audioSrc;
+            audioElem.load();
+
+            // Procesar texto literario inyectando los triggers para el glosario
+            let processedText = week.text;
+            week.vocab.forEach(item => {
+                const regex = new RegExp(`\\b(${item.word})\\b`, 'gi');
+                processedText = processedText.replace(regex, `<span class="vocab-glow" onclick="focusOnDictWord('$1')">$1</span>`);
+            });
+            document.getElementById('literaryText').innerHTML = processedText;
+
+            // Inyectar el glosario completo de la sesión
+            const dictContainer = document.getElementById('dictionaryContainer');
+            dictContainer.innerHTML = '';
+            week.vocab.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'dict-card';
+                card.id = `dict-card-${item.word.toLowerCase().replace(/\s+/g, '-')}`;
+                card.innerHTML = `
+                    <div class="dict-word">
+                        <span class="word-sp">${item.word}</span>
+                        <span class="word-en">${item.en}</span>
+                    </div>
+                    <p class="word-definition">${item.def}</p>
+                `;
+                dictContainer.appendChild(card);
+            });
+
+            // Cambiar vista activa
+            document.getElementById('view-landing').classList.remove('active');
+            document.getElementById('view-console').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function closeWeek() {
+            // Detener audios para evitar contaminación de sonido al salir
+            const audioElem = document.getElementById('lessonAudio');
+            audioElem.pause();
+
+            // Desactivar focus mode
+            document.body.classList.remove('focus-active');
+            document.getElementById('focusBtn').classList.remove('active');
+
+            // Regresar al inicio
+            document.getElementById('view-console').classList.remove('active');
+            document.getElementById('view-landing').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- DESPLAZAMIENTO FLUIDO AL CLIC DE VOCABULARIO ---
+        function focusOnDictWord(word) {
+            const targetId = `dict-card-${word.toLowerCase().trim().replace(/\s+/g, '-')}`;
+            const targetCard = document.getElementById(targetId);
+
+            if (targetCard) {
+                // Desactivar focus mode temporalmente para ver la definición
+                if (document.body.classList.contains('focus-active')) {
+                    toggleFocusMode();
+                }
+
+                targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                targetCard.classList.add('highlighted-card');
+                targetCard.style.animation = "pulseHighlight 1.5s ease forwards";
+
+                setTimeout(() => {
+                    targetCard.style.animation = "";
+                }, 1500);
+            }
+        }
+
+        // --- CONTROLES DE LA CONSOLA (LUPA, FOCO) ---
+        let currentFontSize = 22;
+        function adjustFont(amount) {
+            const textBox = document.getElementById('literaryText');
+            currentFontSize += amount;
+            if (currentFontSize < 16) currentFontSize = 16;
+            if (currentFontSize > 32) currentFontSize = 32;
+            textBox.style.fontSize = currentFontSize + 'px';
+        }
+
+        function toggleFocusMode() {
+            document.body.classList.toggle('focus-active');
+            document.getElementById('focusBtn').classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
